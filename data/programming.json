@@ -1,0 +1,55 @@
+{
+  "languages": [
+    "Java",
+    "Python",
+    "Javascript and Typescript",
+    "C#",
+    "C and C++"
+  ],
+  "libraries": [
+    "React and React Native",
+    "Unity 3D",
+    "Android SDK",
+    "tensorflow and tflearn"
+  ],
+  "projects": [
+    {
+      "title": "Screen Timeout Tile",
+      "body": "During the lockdown of 2020, I had the chance to take part in my first game jam. I worked with two others (a musician and artist) and we made \"Pandemic Shopper\" to match the theme \"Trust No One\". In the game: A deadly virus is upon us and you don't have your essentials! Try to get the highest score by surviving through the days and weeks. Get the item you need while risking your life to The Virus in an ever-evolving supermarket! We ranked 71st overall (67th in gameplay), and thoroughly enjoyed the process. We uploaded the game two and a half hours before the deadline... all bit a little unpolished!<br/>P.S. It's safe to say this game is way overdue an update... hint, hint!",
+      "links": [
+        {
+          "text": "Download Now",
+          "iconClass": "fab fa-google-play",
+          "href": "https://play.google.com/store/apps/details?id=bersey.henry.screensleeptile"
+        }
+      ]
+    },
+    {
+      "title": "Pandemic Shopper",
+      "body": "During the lockdown of 2020 I had the chance to take part in my first game jam. I worked with two others (a musician and artist) and we made \"Pandemic Shopper\" to match the theme \"Trust No One\". In the game: <em>A deadly virus is upon us and you dont have your essentials! Try to get the highest score by surviving through the days and weeks. Get the item you need while risking your life to The Virus in an ever evolving supermarket!</em> We ranked 71st overall (67th in gameplay), and thouroughly enjoyed the process. We uploaded the game two and a half hours before the deadline... all bit a little unpolished! <br />P.S. It's safe to say this game is due an way overdue an update... hint, hint!",
+      "links": [
+        {
+          "text": "Download Now",
+          "iconClass": "fab fa-itch-io",
+          "href": "https://hbersey.itch.io/pandemic-shopper"
+        },
+        {
+          "text": "Source Code",
+          "iconClass": "fab fa-github",
+          "href": "https://github.com/hbersey/Pandemic-Shopper"
+        }
+      ]
+    },
+    {
+      "title": "This Site!",
+      "body": "The source code for this site is available on my GitHub!<br/>This site is written in typescript, using next.js, react.js, Material-UI and font awesome's icons (as well as a couple of other libraries)",
+      "links": [
+        {
+          "text": "Source Code",
+          "iconClass": "fab fa-github",
+          "href": "https://github.com/hbersey/henryb.uk"
+        }
+      ]
+    }
+  ]
+}

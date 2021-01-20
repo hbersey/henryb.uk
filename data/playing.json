@@ -1,0 +1,115 @@
+{
+  "instruments": ["Saxophone", "Clarinet", "Piano", "Singing", "Flute (kinda)"],
+  "playing": [
+    {
+      "type": "youtube",
+      "title": "Cabin Fever Jazz",
+      "playlistId": "PLBFp3tEiyPK-N7uaIianWGdacgQ6vsnHM"
+    },
+    {
+      "type": "parent",
+      "title": "London Jazz Festival 2019",
+      "subtitle": "With the Junior Royal Academy of Music Jazz Department",
+      "children": [
+        {
+          "type": "youtube",
+          "title": "I'm Not So Sure (Cedar Walton)",
+          "videoId": "gyP74bn-Fl4"
+        },
+        {
+          "type": "youtube",
+          "title": "Bolivia (Cedar Walton)",
+          "videoId": "Hi5Bj9eYsks"
+        }
+      ]
+    },
+    {
+      "type": "parent",
+      "title": "The King's School Jazz",
+      "children": [
+        {
+          "type": "youtube",
+          "title": "Jazz on a Summer Summer Sunset 2020",
+          "playlistId": "PLgjLE98CpP1YucSxRFtUDy1i6HyV4RhVW"
+        },
+        {
+          "type": "youtube",
+          "title": "Jazz on a Summer Summer Sunset 2019",
+          "videoId": "hFNn9b229nM"
+        },
+        {
+          "type": "youtube",
+          "title": "Kings Week Jazz Concert 2019",
+          "videoId": "g-vqeJIlw78"
+        },
+        {
+          "type": "youtube",
+          "title": "Kings Week Jazz Concert 2018",
+          "videoId": "YLvM6qX9DsQ"
+        },
+        {
+          "type": "youtube",
+          "title": "Big Band Concert, Spring 2018",
+          "videoId": "BYWZ6-NWluk"
+        },
+        {
+          "type": "youtube",
+          "title": "Kings Week Jazz Concert 2017",
+          "playlistId": "PLBFp3tEiyPK9wlTv3MlPyyBDqurlgSRI0"
+        }
+      ]
+    },
+    {
+      "type": "parent",
+      "title": "The King's School Orchestral and Chamber Music",
+      "children": [
+        {
+          "type": "youtube",
+          "title": "Serenade, Op. 7 (Strauss)",
+          "videoId": "6o2aNX7G8sY"
+        },
+        {
+          "type": "youtube",
+          "title": "A Night On The Bare Mountain (Mussorgsky)",
+          "videoId": "XW2O8aVzPmY"
+        },
+        {
+          "type": "youtube",
+          "title": "Mozartinia",
+          "videoId": "wu8AWQCy7yw"
+        },
+        {
+          "type": "youtube",
+          "title": "Rhapsody in Blue (Gershwin)",
+          "videoId": "hrM1b3FpmEk"
+        },
+        {
+          "type": "youtube",
+          "title": "Extracts from Our Town (Bernstein)",
+          "videoId": "xS6W6QkAR6o"
+        }
+      ]
+    },
+    {
+      "type": "parent",
+      "title": "Canterbury Cathedral Choir",
+      "children": [
+        {
+          "title": "Christmas Night (2016)",
+          "type": "spotify",
+          "spotifyUri": "spotify:album:4c18cTzzq7ypr29rTipKTk"
+        },
+        {
+          "title": "Evensong (2014)",
+          "type": "spotify",
+          "spotifyUri": "spotify:album:3DyxW2KG6fSklmnE2VtOBC"
+        },
+        {
+          "type": "youtube",
+          "title": "Songs Of Praise, March 2013",
+          "videoId": "Z_t7b9qtMFI"
+        }
+      ]
+    }
+  ]
+}

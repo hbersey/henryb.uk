@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "name": "Programmer",
+      "drawerName": "Programming",
+      "href": "/dev"
+    },
+    {
+      "name": "Musician",
+      "drawerName": "Music",
+      "href": "/music"
+    },
+    {
+      "name": "Contact",
+      "href": "/contact",
+      "only": "mobile"
+    }
+  ]
+}

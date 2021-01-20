@@ -1,0 +1,83 @@
+{
+  "definitions": {
+    "player": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "soundcloud"
+          ]
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "url"
+      ]
+    },
+    "composition": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "instrumentation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "player": {
+          "$ref": "#/definitions/player"
+        }
+      },
+      "required": [
+        "name",
+        "description"
+      ]
+    },
+    "arrangement": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/composition"
+        },
+        {
+          "properties": {
+            "original": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "original"
+          ]
+        }
+      ]
+    }
+  },
+  "properties": {
+    "introduction": {
+      "type": "string"
+    },
+    "compositions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/composition"
+      }
+    },
+    "arrangements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/arrangement"
+      }
+    }
+  },
+  "required": [
+    "introduction",
+    "compositions",
+    "arrangements"
+  ]
+}

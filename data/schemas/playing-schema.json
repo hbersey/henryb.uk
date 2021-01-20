@@ -1,0 +1,136 @@
+{
+  "definitions": {
+    "youtube": {
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "youtube"
+              ]
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "title"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "videoId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "videoId"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "properties": {
+                "playlistId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "playlistId"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      ]
+    },
+    "spotify": {
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "spotify"
+          ]
+        },
+        "spotifyUri": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "type",
+        "spotifyUri"
+      ],
+      "additionalProperties": false
+    },
+    "child": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/youtube"
+        },
+        {
+          "$ref": "#/definitions/spotify"
+        }
+      ]
+    },
+    "parent": {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "parent"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/child"
+          }
+        }
+      },
+      "required": [
+        "type",
+        "title",
+        "children"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "playing": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/definitions/child"
+          },
+          {
+            "$ref": "#/definitions/parent"
+          }
+        ]
+      }
+    },
+    "instruments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "playing"
+  ]
+}

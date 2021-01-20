@@ -1,0 +1,73 @@
+{
+  "introduction": "As well as my playing I also enjoy writing compositions and arrangements. My interest in writing music originated from time spent transcribing close harmony arrangements when I was younger. After studying some of Jacob Colier's early arrangements, Alexander L'Estrange's huge portfolio of arrangements and Ed Newton-Rex's arrangements from his time in Cambridge University's Kings Men, I started to pick up some techniques that I was able to use in my arrangements. The natural next step, and more recent chapter for me was to try my hand at composition. I try to use my interest in Jazz improvisation to influence my writing as well as time spent signing in choirs, playing in wind quintets etc. To view my full compositional portfolio click the link below:",
+  "compositions": [
+    {
+      "name": "Theme and Variations on Franconia (TBF)",
+      "description": "A composition I am writing for wind quintet. The composition is inspired by my time as a Cathedral Chorister. I've sung Johann Balthasar König's hymn tune hundreds of times before and now I'm looking forward to playing it!\n",
+      "instrumentation": [
+        "Flute",
+        "Oboe",
+        "Clarinet",
+        "French Horn",
+        "Bassoon"
+      ]
+    },
+    {
+      "name": "Doin' Fine (TBF)",
+      "description": "Doin' Fine is a composition I'm writing for big band and singer is written to the poem \"Too Much Rain\" by King and Stern. It's being written as part of my Pre-U Music. Some big band composers I like are Gordon Goodwin, Jacob Mann and Tommy Igoe.",
+      "instrumentation": [
+        "Lead Vocalist",
+        "Alto Sax x2",
+        "Tenor Sax x2",
+        "Bari Sax",
+        "Trombone x3",
+        "Bass Trombone",
+        "Trumpet x4",
+        "Piano",
+        "Bass",
+        "Drums"
+      ]
+    },
+    {
+      "name": "POLYSAXOPHONY (2019)",
+      "description": "A saxophone sextet which I composed for my GCSE composition in 2019. The piece was inspired by composers such as Steve Reich and Terry Riley and was one of the first things I wrote.",
+      "instrumentation": [
+        "Alto Sax x2",
+        "Tenor Sax x2",
+        "Bari Sax x2"
+      ],
+      "player": {
+        "type": "soundcloud",
+        "url": "https://soundcloud.com/hbersey/polysaxophony"
+      }
+    },
+    {
+      "name": "A Forest Floor (2018)",
+      "description": "The first piece I wrote (which is worth mentioning!). The piece is for saxophone and string quintet and was written for my GCSE composition. To be honest, I don't really like classical saxophone, but at the time I did so I figured I'd stick it here anyway!",
+      "instrumentation": [
+        "Tenor Saxophone",
+        "Violin",
+        "Violin",
+        "Viola",
+        "Cello"
+      ],
+      "player": {
+        "type": "soundcloud",
+        "url": "https://soundcloud.com/hbersey/a-forest-floor"
+      }
+    }
+  ],
+  "arrangements": [
+    {
+      "name": "Let's Do It (TBF)",
+      "original": "Cole Porter",
+      "description": "An arrangement I'm writing for a friend. The arrangement, of the classic American song, Let's Do It, features parts for five girls and one string bass. In terms of inspiration for my style of writing, Jacob Collier's early close harmony arrangements have always fascinated me. Also, I love Alexander L'Estrange's style as well, especially on the Kings Singer's \"Great American Songbook\" Album",
+      "instrumentation": [
+        "x2 Sopranos",
+        "x2 Mezzo-Soprano",
+        "x1 Alto",
+        "String Bass"
+      ]
+    }
+  ]
+}
