@@ -53,10 +53,10 @@ const CompositionsPage: FC<PageProps<Data>> = ({ data }) => {
   return (
     <Layout>
       <div className="flex flex-col mt-1">
-        <div className="w-2/3 mx-auto">
+        <div className="xl:w-2/3 md:w-5/6 w-11/12 mx-auto">
           <h3 className="text-4xl mb-2">Compositions</h3>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+          <div className="grid md:grid-cols-2 gap-x-4 gap-y-2">
             {compositions.map(
               ({ title, year, description, instrumentation, soundcloud }) => (
                 <div className="pt-2 flex flex-col">
@@ -85,10 +85,10 @@ const CompositionsPage: FC<PageProps<Data>> = ({ data }) => {
 
         <hr className="my-4" />
 
-        <div className="w-2/3 mx-auto">
+        <div className="xl:w-2/3 md:w-5/6 w-11/12 mx-auto">
           <h3 className="text-4xl mb-2">Arrangements</h3>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+          <div className="grid md:grid-cols-2 gap-x-4 gap-y-2">
             {arrangements.map(
               ({
                 title,
