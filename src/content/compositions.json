@@ -1,0 +1,52 @@
+{
+  "compositions": [
+    {
+      "title": "Theme and Variations on Franconia",
+      "description": "A composition I am writing for wind quintet. The composition is inspired by my time as a Cathedral Chorister. I've sung Johann Balthasar König's hymn tune hundreds of times before and now I'm looking forward to playing it!",
+      "instrumentation": ["Flute", "Oboe", "Clarinet", "French Horn", "Bassoon"]
+    },
+    {
+      "title": "Doin' Fine",
+      "description": "Doin' Fine is a composition I'm writing for big band and singer is written to the poem \"Too Much Rain\" by King and Stern. It's being written as part of my Pre-U Music. Some big band composers I like are Gordon Goodwin, Jacob Mann and Tommy Igoe.",
+      "instrumentation": [
+        "Singer",
+        "Alto Sax x2",
+        "Tenor Sax x2",
+        "Bari Sax",
+        "Trombone x3",
+        "Bass Trombone",
+        "Trumpet x4",
+        "Piano",
+        "Bass",
+        "Drums"
+      ]
+    },
+    {
+      "title": "POLYSAXOPHONY",
+      "year": 2019,
+      "description": "A saxophone sextet which I composed for my GCSE composition in 2019. The piece was inspired by composers such as Steve Reich and Terry Riley and was one of the first things I wrote.",
+      "instrumentation": ["Alto Sax x2", "Tenor Sax x2", "Bari Sax x2"],
+      "soundcloud": "https://soundcloud.com/hbersey/polysaxophony"
+    },
+    {
+      "title": "A Forst Floor",
+      "year": 2018,
+      "description": "The first piece I wrote (which is worth mentioning!). The piece is for saxophone and string quintet and was written for my GCSE composition. To be honest, I don't really like classical saxophone, but at the time I did so I figured I'd stick it here anyway!",
+      "instrumentation": ["Tenor Sax", "Violin x2", "Viola", "Cello"],
+      "soundcloud": "https://soundcloud.com/hbersey/a-forest-floor"
+    }
+  ],
+  "arrangements": [
+    {
+      "title": "Let's Do It",
+      "original": "Cole Porter",
+      "description": "An arrangement I'm writing for a friend. The arrangement, of the classic American song, Let's Do It, features parts for five girls and one string bass. In terms of inspiration for my style of writing, Jacob Collier's early close harmony arrangements have always fascinated me. Also, I love Alexander L'Estrange's style as well, especially on the Kings Singer's \"Great American Songbook\" Album",
+      "instrumentation": [
+        "Soprano x2",
+        "Mezzo-Soprano x2",
+        "Alto",
+        "String Bass"
+      ]
+    }
+  ]
+}
