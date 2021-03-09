@@ -40,9 +40,6 @@ export const pageQuery = graphql`
               }
               spotify
             }
-            youtube {
-              playlist
-            }
           }
         }
       }
@@ -51,15 +48,17 @@ export const pageQuery = graphql`
 `
 
 const renderItem = (item: Item, top: boolean) => (
-  <div>
-    <h2 className={top ? "text-3xl" : "text-xl"}>{item.title}</h2>
-    <h3 className="text-gray-600">{item.subtitle}</h3>
+  <div className="flex flex-col">
+    <div className="flex-grow">
+      <h2 className={top ? "text-3xl" : "text-xl"}>{item.title}</h2>
+      <h3 className="text-gray-600">{item.subtitle}</h3>
+    </div>
     {item.children != null ? (
-      <div className="grid grid-cols-3 gap-x-3 gap-y-2">
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-none gap-x-3 gap-y-2">
         {item.children.map(el => renderItem(el, false))}
       </div>
     ) : (
-      <div className={`col-span-1 ${top ? "w-1/3 pr-1.5" : "h-full"}`}>
+      <div >
         {item.youtube != null && <Youtube {...item.youtube} />}
         {item.spotify != null && <Spotify spotifyUri={item.spotify} />}
       </div>
@@ -72,7 +71,7 @@ const PlayingPage: FC<Props> = ({ data }) => {
 
   return (
     <Layout>
-      <div className="h-full py-2 px-32 divide-y space-y-2">
+      <div className="h-full py-2 lg:px-32 sm:px-8 px-2 divide-y space-y-2">
         {playing.map(el => renderItem(el, true))}
       </div>
     </Layout>

@@ -2,9 +2,20 @@
   "playing": [
     {
       "title": "Cabin Fever Jazz",
-      "youtube": {
-        "playlist": "PLBFp3tEiyPK-N7uaIianWGdacgQ6vsnHM"
-      }
+      "children": [
+        {
+          "title": "Have you met Miss Jones (R. Rodgers)",
+          "youtube": {
+            "video": "QlMOqzXn96I"
+          }
+        },
+        {
+          "title": "Cabin Fever Jazz",
+          "youtube": {
+            "playlist": "PLBFp3tEiyPK-N7uaIianWGdacgQ6vsnHM"
+          }
+        }
+      ]
     },
     {
       "title": "London Jazz Festival 2019",
