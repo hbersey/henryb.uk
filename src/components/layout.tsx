@@ -2,7 +2,11 @@ import React, { FC, useState } from "react"
 import { Link } from "gatsby"
 import { Menu } from "heroicons-react"
 
-const Layout: FC = ({ children }) => {
+type Props = {
+  hideMenuButton?: boolean
+}
+
+const Layout: FC<Props> = ({ children, hideMenuButton  }) => {
   const [showDrawer, setDrawerVisibility] = useState(false)
 
   const handleShowDrawer = () => setDrawerVisibility(!showDrawer)
@@ -30,7 +34,7 @@ const Layout: FC = ({ children }) => {
         <button onClick={handleShowDrawer}>
           <Menu
             size={32}
-            className="my-auto sm:invisible sm:w-0 sm:h-0 visible w-auto h-auto"
+            className={`my-auto sm:invisible sm:w-0 sm:h-0 visible ${hideMenuButton ? "w-0 h-0" : "w-auto h-auto"}`}
           />
         </button>
       </header>

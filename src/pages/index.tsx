@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 
 const IndexPage: FC<PageProps> = () => {
   return (
-    <Layout>
+    <Layout hideMenuButton>
       <div className="flex h-full text-center">
         <div className="m-auto w-2/3">
           <h1 className="lg:text-8xl sm:text-7xl text-5xl">Henry Bersey</h1>
