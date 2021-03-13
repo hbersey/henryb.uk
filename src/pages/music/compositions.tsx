@@ -1,6 +1,6 @@
 import { graphql, PageProps } from "gatsby"
 import React, { FC } from "react"
-import Layout from "../../components/Layout"
+import Layout from "../../components/layout"
 import SoundCloud from "../../components/soundcloud"
 import resolveConfig from "tailwindcss/resolveConfig"
 import tailwindConfig from "../../../tailwind.config"

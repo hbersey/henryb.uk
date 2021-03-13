@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { PageProps, graphql } from "gatsby"
-import Layout from "../../components/Layout"
+import Layout from "../../components/layout"
 import Youtube from "../../components/youtube"
 import Spotify from "../../components/spotify"
 
