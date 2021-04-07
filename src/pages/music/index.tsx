@@ -58,7 +58,7 @@ const MusicPage: FC<PageProps> = () => {
               time spent signing in choirs, playing in wind quintets etc. To
               view my full compositional portfolio click the link below:
             </p>
-            <Link to="/music/composition">
+            <Link to="/music/compositions">
               <button className="px-2 py-1 mt-2 border border-gray-400 rounded shadow-sm">
                 Compositional Portfolio
               </button>
