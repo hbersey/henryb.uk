@@ -48,6 +48,16 @@ const Layout: FC<Props> = ({
         {description && <meta name="og:description" content={description} />}
         <meta name="og:locale" content="en_GB" />
         <meta name="og:site_name" content="Henry Bersey" />
+
+        {/* Twitter Card Data */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@HBersey" />
+        <meta name="twitter:creator" content="@HBersey" />
+        <meta name="twitter:title" content={title} />
+        {description && (
+          <meta name="twitter:description" content={description} />
+        )}
+        <meta property="twitter:image" content={iconImage} />
       </Helmet>
       <div className="h-screen max-h-screen">
         <div className="flex flex-col h-full max-h-full overflow-hidden divide-y">
