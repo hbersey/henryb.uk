@@ -13,13 +13,14 @@ const Layout: FC<Props> = ({ children, hideMenuButton  }) => {
   const hideDrawer = () => setDrawerVisibility(false)
 
   return (
-    <div className="flex flex-col h-screen divide-y">
-      <header className="bg-red-500 text-white px-4 pb-1 shadow-lg flex flex-row">
+    <div className="h-screen max-h-screen">
+      <div className="flex flex-col h-full max-h-full overflow-hidden divide-y">
+      <header className="flex flex-row px-4 pb-1 text-white bg-red-500 shadow-lg">
         <div className="flex-grow">
           <Link className="text-3xl" to="/">
             Henry Bersey
           </Link>
-          <div className="text-lg my-auto sm:visible sm:w-auto sm:h-auto invisible w-0 h-0">
+          <div className="invisible w-0 h-0 my-auto text-lg sm:visible sm:w-auto sm:h-auto">
             <Link to="/dev">Programmer</Link>
             &nbsp;|&nbsp;
             <Link to="/music">Musician</Link>
@@ -27,7 +28,7 @@ const Layout: FC<Props> = ({ children, hideMenuButton  }) => {
         </div>
         <Link
           to="/contact"
-          className="my-auto sm:visible sm:w-auto sm:h-auto invisible w-0 h-0"
+          className="invisible w-0 h-0 my-auto sm:visible sm:w-auto sm:h-auto"
         >
           GET IN TOUCH
         </Link>
@@ -39,26 +40,27 @@ const Layout: FC<Props> = ({ children, hideMenuButton  }) => {
         </button>
       </header>
 
-      <div className="flex-grow divide-x">
-        <main className="overflow-auto w-full h-full" onClick={hideDrawer}>
+      <div className="flex-grow overflow-hidden divide-x">
+        <main className="w-full h-full overflow-auto" onClick={hideDrawer}>
           {children}
         </main>
         {showDrawer && (
-          <aside className="overflow-auto fixed right-0 top-0 w-2/3 h-full bg-white bg-opacity-95 divide-y flex flex-col px-1">
-            <h1 className="text-2xl py-1">Henry Bersey</h1>
-            <Link to="/music" className="text-lg py-1">
+          <aside className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto bg-white divide-y bg-opacity-95">
+            <h1 className="py-1 text-2xl">Henry Bersey</h1>
+            <Link to="/music" className="py-1 text-lg">
               Musician
             </Link>
-            <Link to="/dev" className="text-lg py-1">
+            <Link to="/dev" className="py-1 text-lg">
               Programmer
             </Link>
           </aside>
         )}
       </div>
 
-      <footer className="text-center py-2">
+      <footer className="py-2 text-center">
         <p>© Henry Bersey 2021</p>
       </footer>
+    </div>
     </div>
   )
 }
