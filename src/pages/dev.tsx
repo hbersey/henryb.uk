@@ -117,7 +117,7 @@ const projects: ProjectProps[] = [
 
 const DevPage: FC<PageProps> = ({ location }) => {
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName="Programming">
       <div className="flex py-2 mx-4">
         <div className="mx-auto space-y-2 divide-y divide-gray-300 lg:w-1/2 md:w-2/3">
           <div>

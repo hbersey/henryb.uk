@@ -70,7 +70,7 @@ const PlayingPage: FC<Props> = ({ data, location }) => {
   const { playing } = data.allContentJson.edges[0].next
 
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName="Playing">
       <div className="h-full px-2 py-2 space-y-2 divide-y lg:px-32 sm:px-8">
         {playing.map(el => renderItem(el, true))}
       </div>

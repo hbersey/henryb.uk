@@ -11,7 +11,7 @@ import { PageProps } from "gatsby"
 
 const ContactPage: FC<PageProps> = ({ location }) => {
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName="Contact">
       <div className="flex h-full">
         <div className="px-1 m-auto divide-y lg:w-1/2 md:w-2/3">
           <div className="mb-3">

@@ -7,14 +7,14 @@ import { WindowLocation } from "@reach/router"
 type Props = {
   location: WindowLocation<unknown>
   hideMenuButton?: boolean
-  title?: string
+  pageName?: string
   description?: string
 }
 
 const Layout: FC<Props> = ({
   children,
   hideMenuButton,
-  title = "Henry Bersey",
+  pageName,
   description = "Personal site for Henry Bersey, a programer and a musician. ",
 }) => {
   const [showDrawer, setDrawerVisibility] = useState(false)
@@ -25,7 +25,9 @@ const Layout: FC<Props> = ({
   return (
     <>
       <Helmet>
-        <title>{title}</title>
+        <title>
+          {pageName ? `${pageName} - Henry Bersey` : `Henry Bersey`}
+        </title>
         <meta name="description" content={description} />
         <link rel="canonical" href={`https://henryb.uk${location.pathname}`} />
       </Helmet>

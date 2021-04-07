@@ -4,7 +4,7 @@ import Layout from "../../components/layout"
 
 const MusicPage: FC<PageProps> = ({ location }) => {
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName="Music">
       <div className="flex py-2 mx-4">
         <div className="mx-auto lg:w-1/2 md:w-2/3">
           <h1 className="text-4xl">Music</h1>

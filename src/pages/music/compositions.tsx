@@ -51,7 +51,7 @@ const CompositionsPage: FC<PageProps<Data>> = ({ data, location }) => {
   const { compositions, arrangements } = data.contentJson
 
   return (
-    <Layout location={location}>
+    <Layout location={location} pageName="Compositions">
       <div className="flex flex-col mt-1">
         <div className="w-11/12 mx-auto xl:w-2/3 md:w-5/6">
           <h3 className="mb-2 text-4xl">Compositions</h3>
