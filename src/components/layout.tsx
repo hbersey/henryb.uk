@@ -25,6 +25,7 @@ const Layout: FC<Props> = ({
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <link rel="canonical" href="https://henryb.uk" />
       </Helmet>
       <div className="h-screen max-h-screen">
         <div className="flex flex-col h-full max-h-full overflow-hidden divide-y">
