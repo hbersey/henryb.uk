@@ -13,7 +13,7 @@ const Layout: FC<Props> = ({
   children,
   hideMenuButton,
   title = "Henry Bersey",
-  description,
+  description = "Personal site for Henry Bersey, a programer and a musician. ",
 }) => {
   const [showDrawer, setDrawerVisibility] = useState(false)
 
