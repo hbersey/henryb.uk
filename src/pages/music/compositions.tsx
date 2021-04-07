@@ -47,12 +47,11 @@ type Data = {
   }
 }
 
-const CompositionsPage: FC<PageProps<Data>> = ({ data, location }) => {
+const CompositionsPage: FC<PageProps<Data>> = ({ data }) => {
   const { compositions, arrangements } = data.contentJson
 
   return (
     <Layout
-      location={location}
       pageName="Compositions"
       description="Original compositions and arrangements by Henry Bersey."
     >

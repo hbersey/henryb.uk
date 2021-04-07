@@ -9,10 +9,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { PageProps } from "gatsby"
 
-const ContactPage: FC<PageProps> = ({ location }) => {
+const ContactPage: FC<PageProps> = () => {
   return (
     <Layout
-      location={location}
       pageName="Contact"
       description="Contact Henry Bersey"
     >

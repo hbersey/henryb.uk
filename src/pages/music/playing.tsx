@@ -66,12 +66,11 @@ const renderItem = (item: Item, top: boolean) => (
   </div>
 )
 
-const PlayingPage: FC<Props> = ({ data, location }) => {
+const PlayingPage: FC<Props> = ({ data }) => {
   const { playing } = data.allContentJson.edges[0].next
 
   return (
     <Layout
-      location={location}
       pageName="Playing"
       description="Videos of Henry Bersey playing and singing."
     >

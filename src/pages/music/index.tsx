@@ -2,10 +2,9 @@ import { Link, PageProps } from "gatsby"
 import React, { FC } from "react"
 import Layout from "../../components/layout"
 
-const MusicPage: FC<PageProps> = ({ location }) => {
+const MusicPage: FC<PageProps> = () => {
   return (
     <Layout
-      location={location}
       pageName="Music"
       description="Henry Bersey is a musician playing sax, clarinet, piano and singing."
     >

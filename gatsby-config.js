@@ -3,6 +3,7 @@ module.exports = {
     title: `henryb.uk`,
     description: `Henry Bersey's Personal Website.`,
     author: `Henry Bersey`,
+    siteUrl: "https://henryb.uk"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -42,5 +43,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-postcss`,
+    "gatsby-plugin-sitemap",
   ],
 }

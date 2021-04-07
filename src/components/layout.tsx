@@ -2,11 +2,10 @@ import React, { FC, useState } from "react"
 import { Link } from "gatsby"
 import { Menu } from "heroicons-react"
 import { Helmet } from "react-helmet"
-import { WindowLocation } from "@reach/router"
+import { Location } from "@reach/router"
 import iconImage from "../images/icon.jpg"
 
 type Props = {
-  location: WindowLocation<unknown>
   hideMenuButton?: boolean
   pageName?: string
   description?: string
@@ -23,42 +22,51 @@ const Layout: FC<Props> = ({
   const handleShowDrawer = () => setDrawerVisibility(!showDrawer)
   const hideDrawer = () => setDrawerVisibility(false)
 
-  const title = pageName ? `${pageName} - Henry Bersey` : `Henry Bersey`
-  const canonical = `https://henryb.uk${location.pathname}`
-
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        {description && <meta name="description" content={description} />}
-        <link rel="canonical" href={canonical} />
+      <Location>
+        {({ location }) => {
+          const title = pageName ? `${pageName} - Henry Bersey` : `Henry Bersey`
+          const canonical = `https://henryb.uk${location.pathname}`
 
-        {/* Open Graph Data */}
-        <meta property="og:title" content={title} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:image" content={iconImage} />
+          return (
+            <Helmet>
+              <title>{title}</title>
+              {description && <meta name="description" content={description} />}
+              <link rel="canonical" href={canonical} />
 
-        {/*Additional Open Graph Data */}
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="627" />
-        <meta property="og:image:height" content="627" />
-        <meta property="og:image:alt" content="Henry Bersey" />
+              {/* Open Graph Data */}
+              <meta property="og:title" content={title} />
+              <meta property="og:type" content="website" />
+              <meta property="og:url" content={canonical} />
+              <meta property="og:image" content={iconImage} />
 
-        {description && <meta name="og:description" content={description} />}
-        <meta name="og:locale" content="en_GB" />
-        <meta name="og:site_name" content="Henry Bersey" />
+              {/*Additional Open Graph Data */}
+              <meta property="og:image:type" content="image/jpeg" />
+              <meta property="og:image:width" content="627" />
+              <meta property="og:image:height" content="627" />
+              <meta property="og:image:alt" content="Henry Bersey" />
 
-        {/* Twitter Card Data */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@HBersey" />
-        <meta name="twitter:creator" content="@HBersey" />
-        <meta name="twitter:title" content={title} />
-        {description && (
-          <meta name="twitter:description" content={description} />
-        )}
-        <meta property="twitter:image" content={iconImage} />
-      </Helmet>
+              {description && (
+                <meta name="og:description" content={description} />
+              )}
+              <meta name="og:locale" content="en_GB" />
+              <meta name="og:site_name" content="Henry Bersey" />
+
+              {/* Twitter Card Data */}
+              <meta name="twitter:card" content="summary" />
+              <meta name="twitter:site" content="@HBersey" />
+              <meta name="twitter:creator" content="@HBersey" />
+              <meta name="twitter:title" content={title} />
+              {description && (
+                <meta name="twitter:description" content={description} />
+              )}
+              <meta property="twitter:image" content={iconImage} />
+            </Helmet>
+          )
+        }}
+      </Location>
+
       <div className="h-screen max-h-screen">
         <div className="flex flex-col h-full max-h-full overflow-hidden divide-y">
           <header className="flex flex-row px-4 pb-1 text-white bg-red-500 shadow-lg">
