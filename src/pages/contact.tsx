@@ -7,10 +7,11 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
+import { PageProps } from "gatsby"
 
-const ContactPage: FC = () => {
+const ContactPage: FC<PageProps> = ({ location }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <div className="flex h-full">
         <div className="px-1 m-auto divide-y lg:w-1/2 md:w-2/3">
           <div className="mb-3">

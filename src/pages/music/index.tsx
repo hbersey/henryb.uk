@@ -2,9 +2,9 @@ import { Link, PageProps } from "gatsby"
 import React, { FC } from "react"
 import Layout from "../../components/layout"
 
-const MusicPage: FC<PageProps> = () => {
+const MusicPage: FC<PageProps> = ({ location }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <div className="flex py-2 mx-4">
         <div className="mx-auto lg:w-1/2 md:w-2/3">
           <h1 className="text-4xl">Music</h1>

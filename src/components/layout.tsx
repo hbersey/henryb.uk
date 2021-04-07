@@ -2,8 +2,10 @@ import React, { FC, useState } from "react"
 import { Link } from "gatsby"
 import { Menu } from "heroicons-react"
 import { Helmet } from "react-helmet"
+import { WindowLocation } from "@reach/router"
 
 type Props = {
+  location: WindowLocation<unknown>
   hideMenuButton?: boolean
   title?: string
   description?: string
@@ -25,7 +27,7 @@ const Layout: FC<Props> = ({
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href="https://henryb.uk" />
+        <link rel="canonical" href={`https://henryb.uk${location.pathname}`} />
       </Helmet>
       <div className="h-screen max-h-screen">
         <div className="flex flex-col h-full max-h-full overflow-hidden divide-y">

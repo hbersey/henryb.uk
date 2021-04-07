@@ -54,7 +54,7 @@ const renderItem = (item: Item, top: boolean) => (
       <h3 className="text-gray-600">{item.subtitle}</h3>
     </div>
     {item.children != null ? (
-      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-none gap-x-3 gap-y-2">
+      <div className="grid grid-cols-none xl:grid-cols-3 md:grid-cols-2 gap-x-3 gap-y-2">
         {item.children.map(el => renderItem(el, false))}
       </div>
     ) : (
@@ -66,12 +66,12 @@ const renderItem = (item: Item, top: boolean) => (
   </div>
 )
 
-const PlayingPage: FC<Props> = ({ data }) => {
+const PlayingPage: FC<Props> = ({ data, location }) => {
   const { playing } = data.allContentJson.edges[0].next
 
   return (
-    <Layout>
-      <div className="h-full py-2 lg:px-32 sm:px-8 px-2 divide-y space-y-2">
+    <Layout location={location}>
+      <div className="h-full px-2 py-2 space-y-2 divide-y lg:px-32 sm:px-8">
         {playing.map(el => renderItem(el, true))}
       </div>
     </Layout>
