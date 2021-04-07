@@ -1,4 +1,4 @@
-import { PageProps } from "gatsby"
+import { Link, PageProps } from "gatsby"
 import React, { FC } from "react"
 import Layout from "../../components/layout"
 
@@ -8,7 +8,7 @@ const MusicPage: FC<PageProps> = () => {
       <div className="flex py-2 mx-4">
         <div className="mx-auto lg:w-1/2 md:w-2/3">
           <h1 className="text-4xl">Music</h1>
-          <div className="md:ml-8 my-2">
+          <div className="my-2 md:ml-8">
             <p>
               At the age of seven I began my musical education, picking up the
               clarinet. A few years later I began signing daily in Canterbury
@@ -33,15 +33,17 @@ const MusicPage: FC<PageProps> = () => {
               is my passion by I pride myself on being able to fit into many
               music environments.
             </p>
-            <button className="mt-2 rounded border border-gray-400 shadow-sm py-1 px-2">
-              See Me Play
-            </button>
+            <Link to="/music/playing">
+              <button className="px-2 py-1 mt-2 border border-gray-400 rounded shadow-sm">
+                See Me Play
+              </button>
+            </Link>
           </div>
 
           <hr className="my-3" />
 
           <h1 className="text-4xl">Composition and Arranging</h1>
-          <div className="md:ml-8 my-2">
+          <div className="my-2 md:ml-8">
             <p>
               As well as my playing I also enjoy writing compositions and
               arrangements. My interest in writing music originated from time
@@ -56,9 +58,11 @@ const MusicPage: FC<PageProps> = () => {
               time spent signing in choirs, playing in wind quintets etc. To
               view my full compositional portfolio click the link below:
             </p>
-            <button className="mt-2 rounded border border-gray-400 shadow-sm py-1 px-2">
-              Compositional Portfolio
-            </button>
+            <Link to="/music/composition">
+              <button className="px-2 py-1 mt-2 border border-gray-400 rounded shadow-sm">
+                Compositional Portfolio
+              </button>
+            </Link>
           </div>
         </div>
       </div>
