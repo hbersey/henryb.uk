@@ -1,12 +1,13 @@
 import React, { FC } from "react"
 
-type Props = { video: string } | { playlist: string }
+type Props = { video: string | null; playlist: string | null }
 
 const Youtube: FC<Props> = props => {
   const src =
-    "video" in props
+    props["video"] != null
       ? `https://www.youtube.com/embed/${props.video}`
-      : `https://www.youtube.com/embed?listType=playlist&list=${props.playlist}`
+      : `https://www.youtube.com/embed/videoseries?list=${props.playlist}`
+
   return (
     <div className="relative h-0" style={{ paddingBottom: "56.25%" }}>
       <iframe
