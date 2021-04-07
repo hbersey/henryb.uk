@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { Menu } from "heroicons-react"
 import { Helmet } from "react-helmet"
 import { WindowLocation } from "@reach/router"
+import iconImage from "../images/icon.jpg"
 
 type Props = {
   location: WindowLocation<unknown>
@@ -22,14 +23,31 @@ const Layout: FC<Props> = ({
   const handleShowDrawer = () => setDrawerVisibility(!showDrawer)
   const hideDrawer = () => setDrawerVisibility(false)
 
+  const title = pageName ? `${pageName} - Henry Bersey` : `Henry Bersey`
+  const canonical = `https://henryb.uk${location.pathname}`
+
   return (
     <>
       <Helmet>
-        <title>
-          {pageName ? `${pageName} - Henry Bersey` : `Henry Bersey`}
-        </title>
+        <title>{title}</title>
         {description && <meta name="description" content={description} />}
-        <link rel="canonical" href={`https://henryb.uk${location.pathname}`} />
+        <link rel="canonical" href={canonical} />
+
+        {/* Open Graph Data */}
+        <meta property="og:title" content={title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={iconImage} />
+
+        {/*Additional Open Graph Data */}
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="627" />
+        <meta property="og:image:height" content="627" />
+        <meta property="og:image:alt" content="Henry Bersey" />
+
+        {description && <meta name="og:description" content={description} />}
+        <meta name="og:locale" content="en_GB" />
+        <meta name="og:site_name" content="Henry Bersey" />
       </Helmet>
       <div className="h-screen max-h-screen">
         <div className="flex flex-col h-full max-h-full overflow-hidden divide-y">
