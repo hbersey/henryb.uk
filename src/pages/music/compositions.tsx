@@ -51,15 +51,18 @@ const CompositionsPage: FC<PageProps<Data>> = ({ data }) => {
   const { compositions, arrangements } = data.contentJson
 
   return (
-    <Layout>
+    <Layout
+      pageName="Compositions"
+      description="Original compositions and arrangements by Henry Bersey."
+    >
       <div className="flex flex-col mt-1">
-        <div className="xl:w-2/3 md:w-5/6 w-11/12 mx-auto">
-          <h3 className="text-4xl mb-2">Compositions</h3>
+        <div className="w-11/12 mx-auto xl:w-2/3 md:w-5/6">
+          <h3 className="mb-2 text-4xl">Compositions</h3>
 
           <div className="grid md:grid-cols-2 gap-x-4 gap-y-2">
             {compositions.map(
               ({ title, year, description, instrumentation, soundcloud }) => (
-                <div className="pt-2 flex flex-col">
+                <div className="flex flex-col pt-2">
                   <h2 className="text-2xl">
                     {title} ({year ?? "TBF"})
                   </h2>
@@ -85,8 +88,8 @@ const CompositionsPage: FC<PageProps<Data>> = ({ data }) => {
 
         <hr className="my-4" />
 
-        <div className="xl:w-2/3 md:w-5/6 w-11/12 mx-auto">
-          <h3 className="text-4xl mb-2">Arrangements</h3>
+        <div className="w-11/12 mx-auto xl:w-2/3 md:w-5/6">
+          <h3 className="mb-2 text-4xl">Arrangements</h3>
 
           <div className="grid md:grid-cols-2 gap-x-4 gap-y-2">
             {arrangements.map(
@@ -98,7 +101,7 @@ const CompositionsPage: FC<PageProps<Data>> = ({ data }) => {
                 instrumentation,
                 soundcloud,
               }) => (
-                <div className="pt-2 flex flex-col">
+                <div className="flex flex-col pt-2">
                   <h2 className="text-2xl">
                     {title} ({year ?? "TBF"})
                   </h2>
