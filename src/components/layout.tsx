@@ -24,7 +24,7 @@ const Layout: FC<Props> = ({
     <>
       <Helmet>
         <title>{title}</title>
-        {description && <meta name="description" content={description} />}
+        <meta name="description" content={description} />
       </Helmet>
       <div className="h-screen max-h-screen">
         <div className="flex flex-col h-full max-h-full overflow-hidden divide-y">
