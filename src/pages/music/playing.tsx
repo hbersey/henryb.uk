@@ -58,7 +58,7 @@ const renderItem = (item: Item, top: boolean) => (
         {item.children.map(el => renderItem(el, false))}
       </div>
     ) : (
-      <div >
+      <div>
         {item.youtube != null && <Youtube {...item.youtube} />}
         {item.spotify != null && <Spotify spotifyUri={item.spotify} />}
       </div>
@@ -70,7 +70,11 @@ const PlayingPage: FC<Props> = ({ data, location }) => {
   const { playing } = data.allContentJson.edges[0].next
 
   return (
-    <Layout location={location} pageName="Playing">
+    <Layout
+      location={location}
+      pageName="Playing"
+      description="Videos of Henry Bersey playing and singing."
+    >
       <div className="h-full px-2 py-2 space-y-2 divide-y lg:px-32 sm:px-8">
         {playing.map(el => renderItem(el, true))}
       </div>

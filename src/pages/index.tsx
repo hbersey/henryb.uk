@@ -2,9 +2,14 @@ import { PageProps, Link } from "gatsby"
 import React, { FC } from "react"
 import Layout from "../components/layout"
 
-const IndexPage: FC<PageProps> = ({location}) => {
+const IndexPage: FC<PageProps> = ({ location }) => {
   return (
-    <Layout hideMenuButton location={location} pageName="Home">
+    <Layout
+      hideMenuButton
+      location={location}
+      pageName="Home"
+      description="Personal site for Henry Bersey, a programer and a musician. "
+    >
       <div className="flex h-full text-center">
         <div className="w-2/3 m-auto">
           <h1 className="text-5xl lg:text-8xl sm:text-7xl">Henry Bersey</h1>

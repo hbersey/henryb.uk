@@ -117,7 +117,11 @@ const projects: ProjectProps[] = [
 
 const DevPage: FC<PageProps> = ({ location }) => {
   return (
-    <Layout location={location} pageName="Programming">
+    <Layout
+      location={location}
+      pageName="Programming"
+      description="Henry Bersey is a programmer using tools such as Java, C, C++, JS, TS, C#, Python"
+    >
       <div className="flex py-2 mx-4">
         <div className="mx-auto space-y-2 divide-y divide-gray-300 lg:w-1/2 md:w-2/3">
           <div>

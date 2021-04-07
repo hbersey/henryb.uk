@@ -15,7 +15,7 @@ const Layout: FC<Props> = ({
   children,
   hideMenuButton,
   pageName,
-  description = "Personal site for Henry Bersey, a programer and a musician. ",
+  description,
 }) => {
   const [showDrawer, setDrawerVisibility] = useState(false)
 
@@ -28,7 +28,7 @@ const Layout: FC<Props> = ({
         <title>
           {pageName ? `${pageName} - Henry Bersey` : `Henry Bersey`}
         </title>
-        <meta name="description" content={description} />
+        {description && <meta name="description" content={description} />}
         <link rel="canonical" href={`https://henryb.uk${location.pathname}`} />
       </Helmet>
       <div className="h-screen max-h-screen">
