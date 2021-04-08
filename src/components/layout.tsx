@@ -6,14 +6,12 @@ import { Location } from "@reach/router"
 import iconImage from "../images/icon.jpg"
 
 type Props = {
-  hideMenuButton?: boolean
   pageName?: string
   description?: string
 }
 
 const Layout: FC<Props> = ({
   children,
-  hideMenuButton,
   pageName,
   description,
 }) => {
@@ -89,9 +87,7 @@ const Layout: FC<Props> = ({
             <button onClick={handleShowDrawer}>
               <Menu
                 size={32}
-                className={`my-auto sm:invisible sm:w-0 sm:h-0 visible ${
-                  hideMenuButton ? "w-0 h-0" : "w-auto h-auto"
-                }`}
+                className="visible w-auto h-auto my-auto sm:invisible sm:w-0 sm:h-0"
               />
             </button>
           </header>
