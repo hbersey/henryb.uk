@@ -61,9 +61,9 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
         }}
       </Location>
 
-      <div className={`h-screen max-h-screen`}>
-        <div className="flex flex-col h-full max-h-full overflow-hidden divide-y">
-          <header className="flex flex-row px-4 pb-1 text-white bg-red-500 shadow-lg">
+      <div className="h-screen max-h-screen dark:bg-gray-700 dark:text-white">
+        <div className="flex flex-col h-full max-h-full overflow-hidden">
+          <header className="flex flex-row px-4 pb-1 text-white bg-red-500 shadow-lg dark:bg-gray-800">
             <div className="flex-grow">
               <Link className="text-3xl" to="/">
                 Henry Bersey
@@ -88,12 +88,12 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
             </button>
           </header>
 
-          <div className="flex-grow overflow-hidden divide-x">
+          <div className="flex-grow overflow-hidden">
             <main className="w-full h-full overflow-auto" onClick={hideDrawer}>
               {children}
             </main>
             {showDrawer && (
-              <aside className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto text-lg bg-white divide-y bg-opacity-95">
+              <aside className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto text-lg bg-white divide-y dark:bg-gray-700 bg-opacity-95">
                 <h1 className="py-1 text-2xl">Henry Bersey</h1>
                 <Link to="/music" className="py-1">
                   Musician
@@ -109,7 +109,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
             )}
           </div>
 
-          <footer className="py-2 text-center">
+          <footer className="py-2 text-center border-t dark:border-white">
             <p>© Henry Bersey 2021</p>
           </footer>
         </div>
