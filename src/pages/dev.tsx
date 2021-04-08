@@ -22,7 +22,7 @@ type ProjectProps = {
 const Project: FC<ProjectProps> = ({ title, description, buttons }) => {
   return (
     <div>
-      <h3 className="text-3xl">{title}</h3>
+      <h2 className="text-3xl">{title}</h2>
       <p>{description}</p>
       <div className="mt-1 space-x-2">
         {buttons.map(({ icon, text, link }) => (
