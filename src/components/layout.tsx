@@ -15,11 +15,14 @@ type Props = {
 export const pageTransitionLinkProps = {
   exit: {
     length: 0.4,
-    state: { x: -window.innerWidth, opacity: 0 },
+    state: {
+      x: typeof window !== "undefined" ? -window.innerWidth : -750,
+      opacity: 0,
+    },
   },
   entry: {
     delay: 0.4,
-    state: { x: window.innerWidth },
+    state: { x: typeof window !== "undefined" ? -window.innerWidth : -750 },
   },
 }
 
@@ -139,7 +142,12 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
                 <motion.aside
                   className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto text-lg bg-white divide-y dark:bg-gray-700 bg-opacity-95"
                   variants={{
-                    hidden: { x: window.innerWidth * (2 / 3) },
+                    hidden: {
+                      x:
+                        typeof window !== "undefined"
+                          ? window.innerWidth * (2 / 3)
+                          : 500,
+                    },
                     shown: { x: 0 },
                   }}
                   initial="hidden"
