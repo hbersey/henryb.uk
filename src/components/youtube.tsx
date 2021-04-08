@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 
-type Props = { video: string | null; playlist: string | null }
+type Props = { video: string } | { playlist: string }
 
 const Youtube: FC<Props> = props => {
   const src =

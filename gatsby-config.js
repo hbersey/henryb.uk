@@ -3,19 +3,11 @@ module.exports = {
     title: `henryb.uk`,
     description: `Henry Bersey's Personal Website.`,
     author: `Henry Bersey`,
-    siteUrl: "https://henryb.uk"
+    siteUrl: "https://henryb.uk",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/src/content`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -44,6 +36,6 @@ module.exports = {
     },
     `gatsby-plugin-postcss`,
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-transition-link"
+    "gatsby-plugin-transition-link",
   ],
 }
