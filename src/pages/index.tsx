@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 const IndexPage: FC<PageProps> = () => {
   return (
     <Layout
-      hideMenuButton
       pageName="Home"
       description="Personal site for Henry Bersey, a programer and a musician. "
     >

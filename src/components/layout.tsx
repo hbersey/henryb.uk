@@ -6,17 +6,11 @@ import { Location } from "@reach/router"
 import iconImage from "../images/icon.jpg"
 
 type Props = {
-  hideMenuButton?: boolean
   pageName?: string
   description?: string
 }
 
-const Layout: FC<Props> = ({
-  children,
-  hideMenuButton,
-  pageName,
-  description,
-}) => {
+const Layout: FC<Props> = ({ children, pageName, description }) => {
   const [showDrawer, setDrawerVisibility] = useState(false)
 
   const handleShowDrawer = () => setDrawerVisibility(!showDrawer)
@@ -89,9 +83,7 @@ const Layout: FC<Props> = ({
             <button onClick={handleShowDrawer}>
               <Menu
                 size={32}
-                className={`my-auto sm:invisible sm:w-0 sm:h-0 visible ${
-                  hideMenuButton ? "w-0 h-0" : "w-auto h-auto"
-                }`}
+                className="visible w-auto h-auto my-auto sm:invisible sm:w-0 sm:h-0"
               />
             </button>
           </header>
@@ -101,14 +93,16 @@ const Layout: FC<Props> = ({
               {children}
             </main>
             {showDrawer && (
-              <aside className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto bg-white divide-y bg-opacity-95">
+              <aside className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto text-lg bg-white divide-y bg-opacity-95">
                 <h1 className="py-1 text-2xl">Henry Bersey</h1>
-                <Link to="/music" className="py-1 text-lg">
+                <Link to="/music" className="py-1">
                   Musician
                 </Link>
-                <Link to="/dev" className="py-1 text-lg">
+                <Link to="/dev" className="py-1">
                   Programmer
                 </Link>
+                <div className="flex-grow" />
+                <Link to="/contact" className="py-1">Get In Touch</Link>
               </aside>
             )}
           </div>
