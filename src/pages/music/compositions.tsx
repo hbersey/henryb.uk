@@ -9,46 +9,50 @@ const tailwind = resolveConfig(tailwindConfig)
 
 export const pageQuery = graphql`
   query CompositionsPageQuery {
-    contentJson {
-      compositions {
-        title
-        year
-        description
-        instrumentation
-        soundcloud
-      }
-      arrangements {
-        title
-        original
-        description
-        instrumentation
+    allContentJson {
+      nodes {
+        compositions {
+          description
+          instrumentation
+          soundcloud
+          title
+          year
+        }
+        arrangements {
+          description
+          instrumentation
+          original
+          title
+        }
       }
     }
   }
 `
 
 type Data = {
-  contentJson: {
-    compositions: {
-      title: string
-      year?: number
-      description: string
-      instrumentation: string[]
-      soundcloud?: string
-    }[]
-    arrangements: {
-      title: string
-      year?: number
-      original?: string
-      description: string
-      instrumentation: string[]
-      soundcloud?: string
+  allContentJson: {
+    nodes: {
+      compositions: {
+        title: string
+        year?: number
+        description: string
+        instrumentation: string[]
+        soundcloud?: string
+      }[]
+      arrangements: {
+        title: string
+        year?: number
+        original?: string
+        description: string
+        instrumentation: string[]
+        soundcloud?: string
+      }[]
     }[]
   }
 }
 
 const CompositionsPage: FC<PageProps<Data>> = ({ data }) => {
-  const { compositions, arrangements } = data.contentJson
+  const { compositions, arrangements } = data.allContentJson.nodes[1]
 
   return (
     <Layout

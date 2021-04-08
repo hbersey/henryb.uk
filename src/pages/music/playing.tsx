@@ -14,10 +14,8 @@ type Item = {
 
 type Data = {
   allContentJson: {
-    edges: {
-      next: {
-        playing: Item[]
-      }
+    nodes: {
+      playing: Item[]
     }[]
   }
 }
@@ -27,19 +25,17 @@ type Props = PageProps<Data>
 export const pageQuery = graphql`
   query PlayingPageQuery {
     allContentJson {
-      edges {
-        next {
-          playing {
-            subtitle
+      nodes {
+        playing {
+          subtitle
+          title
+          children {
             title
-            children {
-              title
-              youtube {
-                video
-                playlist
-              }
-              spotify
+            youtube {
+              video
+              playlist
             }
+            spotify
           }
         }
       }
@@ -67,7 +63,7 @@ const renderItem = (item: Item, top: boolean) => (
 )
 
 const PlayingPage: FC<Props> = ({ data }) => {
-  const { playing } = data.allContentJson.edges[0].next
+  const { playing } = data.allContentJson.nodes[0]
 
   return (
     <Layout
