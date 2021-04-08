@@ -1,70 +1,31 @@
 import React, { FC } from "react"
-import { PageProps, graphql } from "gatsby"
+import { PageProps } from "gatsby"
 import Layout from "../../components/layout"
 import Youtube from "../../components/youtube"
 import Spotify from "../../components/spotify"
+import { playing } from "../../content/playing.json"
+import { number } from "prop-types"
 
-type Item = {
-  title: string
-  subtitle: string | null
-  children: Item[] | null
-  youtube: { playlist: string } | { video: string } | null
-  spotify: string | null
-}
-
-type Data = {
-  allContentJson: {
-    nodes: {
-      playing: Item[]
-    }[]
-  }
-}
-
-type Props = PageProps<Data>
-
-export const pageQuery = graphql`
-  query PlayingPageQuery {
-    allContentJson {
-      nodes {
-        playing {
-          subtitle
-          title
-          children {
-            title
-            youtube {
-              video
-              playlist
-            }
-            spotify
-          }
-        }
-      }
-    }
-  }
-`
-
-const renderItem = (item: Item, top: boolean) => (
+const renderItem = (item: any, top: boolean) => (
   <div className="flex flex-col">
     <div className="flex-grow">
       <h2 className={top ? "text-3xl" : "text-xl"}>{item.title}</h2>
       <h3 className="text-gray-600">{item.subtitle}</h3>
     </div>
-    {item.children != null ? (
+    {item.children ? (
       <div className="grid grid-cols-none xl:grid-cols-3 md:grid-cols-2 gap-x-3 gap-y-2">
         {item.children.map(el => renderItem(el, false))}
       </div>
     ) : (
       <div>
-        {item.youtube != null && <Youtube {...item.youtube} />}
-        {item.spotify != null && <Spotify spotifyUri={item.spotify} />}
+        {item.youtube && <Youtube {...item.youtube} />}
+        {item.spotify && <Spotify spotifyUri={item.spotify} />}
       </div>
     )}
   </div>
 )
 
-const PlayingPage: FC<Props> = ({ data }) => {
-  const { playing } = data.allContentJson.nodes[0]
-
+const PlayingPage: FC<PageProps> = ({}) => {
   return (
     <Layout
       pageName="Playing"

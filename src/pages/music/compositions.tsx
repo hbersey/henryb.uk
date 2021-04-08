@@ -4,56 +4,11 @@ import Layout from "../../components/layout"
 import SoundCloud from "../../components/soundcloud"
 import resolveConfig from "tailwindcss/resolveConfig"
 import tailwindConfig from "../../../tailwind.config"
+import { compositions, arrangements } from "../../content/compositions.json"
 
 const tailwind = resolveConfig(tailwindConfig)
 
-export const pageQuery = graphql`
-  query CompositionsPageQuery {
-    allContentJson {
-      nodes {
-        compositions {
-          description
-          instrumentation
-          soundcloud
-          title
-          year
-        }
-        arrangements {
-          description
-          instrumentation
-          original
-          title
-        }
-      }
-    }
-  }
-`
-
-type Data = {
-  allContentJson: {
-    nodes: {
-      compositions: {
-        title: string
-        year?: number
-        description: string
-        instrumentation: string[]
-        soundcloud?: string
-      }[]
-      arrangements: {
-        title: string
-        year?: number
-        original?: string
-        description: string
-        instrumentation: string[]
-        soundcloud?: string
-      }[]
-    }[]
-  }
-}
-
-const CompositionsPage: FC<PageProps<Data>> = ({ data }) => {
-  const { compositions, arrangements } = data.allContentJson.nodes[1]
-
+const CompositionsPage: FC<PageProps> = () => {
   return (
     <Layout
       pageName="Compositions"
@@ -96,37 +51,31 @@ const CompositionsPage: FC<PageProps<Data>> = ({ data }) => {
           <h3 className="mb-2 text-4xl">Arrangements</h3>
 
           <div className="grid md:grid-cols-2 gap-x-4 gap-y-2">
-            {arrangements.map(
-              ({
-                title,
-                year,
-                original,
-                description,
-                instrumentation,
-                soundcloud,
-              }) => (
-                <div className="flex flex-col pt-2">
-                  <h2 className="text-2xl">
-                    {title} ({year ?? "TBF"})
-                  </h2>
-                  <h4 className="text-xl italic">{original}</h4>
-                  <p>{description}</p>
-                  <p className="font-semibold">Instrumentation:</p>
-                  <ul className="list-disc list-inside">
-                    {instrumentation.map(el => (
-                      <li>{el}</li>
-                    ))}
-                  </ul>
-                  <div className="flex-grow" />
-                  {soundcloud && (
+            {arrangements.map(({ title, // year,
+              original, description, instrumentation }) => (
+              // soundcloud,
+              <div className="flex flex-col pt-2">
+                <h2 className="text-2xl">
+                  {/* {title} ({year ?? "TBF"}) */}
+                  {title} (TBF)
+                </h2>
+                <h4 className="text-xl italic">{original}</h4>
+                <p>{description}</p>
+                <p className="font-semibold">Instrumentation:</p>
+                <ul className="list-disc list-inside">
+                  {instrumentation.map(el => (
+                    <li>{el}</li>
+                  ))}
+                </ul>
+                <div className="flex-grow" />
+                {/* {soundcloud && (
                     <SoundCloud
                       url={soundcloud}
                       colour={tailwind.theme.backgroundColor.red["500"]}
                     />
-                  )}
-                </div>
-              )
-            )}
+                  )} */}
+              </div>
+            ))}
           </div>
         </div>
       </div>
