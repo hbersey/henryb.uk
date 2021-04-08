@@ -12,21 +12,9 @@ type Props = {
 
 const Layout: FC<Props> = ({ children, pageName, description }) => {
   const [showDrawer, setDrawerVisibility] = useState(false)
-  const [darkMode, setDarkMode] = useState(true)
 
   const handleShowDrawer = () => setDrawerVisibility(!showDrawer)
   const hideDrawer = () => setDrawerVisibility(false)
-
-  useEffect(() => {
-    if (!window.matchMedia) return
-
-    const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)")
-
-    setDarkMode(mediaQueryList.matches)
-    mediaQueryList.addEventListener("change", event =>
-      setDarkMode(event.matches)
-    )
-  }, [])
 
   return (
     <>
@@ -73,7 +61,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
         }}
       </Location>
 
-      <div className={`h-screen max-h-screen ${darkMode ? "dark" : ""}`}>
+      <div className={`h-screen max-h-screen`}>
         <div className="flex flex-col h-full max-h-full overflow-hidden divide-y">
           <header className="flex flex-row px-4 pb-1 text-white bg-red-500 shadow-lg">
             <div className="flex-grow">
