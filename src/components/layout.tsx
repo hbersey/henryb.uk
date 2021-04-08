@@ -22,7 +22,7 @@ export const pageTransitionLinkProps = {
   },
   entry: {
     delay: 0.4,
-    state: { x: typeof window !== "undefined" ? -window.innerWidth : -750 },
+    state: { x: typeof window !== "undefined" ?window.innerWidth : 750 },
   },
 }
 
@@ -139,16 +139,18 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
                 >
                   {children}
                 </motion.main>
+
                 <motion.aside
                   className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto text-lg bg-white divide-y dark:bg-gray-700 bg-opacity-95"
                   variants={{
                     hidden: {
+                      opacity: 0,
                       x:
                         typeof window !== "undefined"
                           ? window.innerWidth * (2 / 3)
                           : 500,
                     },
-                    shown: { x: 0 },
+                    shown: { x: 0, opacity: 1 },
                   }}
                   initial="hidden"
                   animate={showDrawer && mount ? "shown" : "hidden"}
