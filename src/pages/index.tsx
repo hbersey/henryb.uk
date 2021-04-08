@@ -1,6 +1,7 @@
 import { PageProps, Link } from "gatsby"
 import React, { FC } from "react"
-import Layout from "../components/layout"
+import Layout, { pageTransitionLinkProps } from "../components/layout"
+import TransitionLink from "gatsby-plugin-transition-link"
 
 const IndexPage: FC<PageProps> = () => {
   return (
@@ -14,18 +15,18 @@ const IndexPage: FC<PageProps> = () => {
           <div className="w-2/3 mx-auto ">
             <div className="block pt-16 text-lg sm:flex ">
               <div className="w-full mb-1 sm:w-1/2 sm:mb-0">
-                <Link to="/dev">
+                <TransitionLink to="/dev" {...pageTransitionLinkProps}>
                   <button className="px-2 py-1 border border-gray-300 rounded">
                     Programmer
                   </button>
-                </Link>
+                </TransitionLink>
               </div>
               <div className="sm:w-1/2 w-f">
-                <Link to="/music">
+                <TransitionLink to="/music" {...pageTransitionLinkProps}>
                   <button className="px-2 py-1 border border-gray-300 rounded">
                     Musician
                   </button>
-                </Link>
+                </TransitionLink>
               </div>
             </div>
           </div>
