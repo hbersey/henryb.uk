@@ -10,11 +10,7 @@ type Props = {
   description?: string
 }
 
-const Layout: FC<Props> = ({
-  children,
-  pageName,
-  description,
-}) => {
+const Layout: FC<Props> = ({ children, pageName, description }) => {
   const [showDrawer, setDrawerVisibility] = useState(false)
 
   const handleShowDrawer = () => setDrawerVisibility(!showDrawer)
@@ -97,14 +93,16 @@ const Layout: FC<Props> = ({
               {children}
             </main>
             {showDrawer && (
-              <aside className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto bg-white divide-y bg-opacity-95">
+              <aside className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto text-lg bg-white divide-y bg-opacity-95">
                 <h1 className="py-1 text-2xl">Henry Bersey</h1>
-                <Link to="/music" className="py-1 text-lg">
+                <Link to="/music" className="py-1">
                   Musician
                 </Link>
-                <Link to="/dev" className="py-1 text-lg">
+                <Link to="/dev" className="py-1">
                   Programmer
                 </Link>
+                <div className="flex-grow" />
+                <Link to="/contact" className="py-1">Get In Touch</Link>
               </aside>
             )}
           </div>
