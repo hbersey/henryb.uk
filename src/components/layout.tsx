@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from "react"
-import { Link } from "gatsby"
 import { Menu } from "heroicons-react"
 import { Helmet } from "react-helmet"
 import { Location } from "@reach/router"
@@ -22,7 +21,7 @@ export const pageTransitionLinkProps = {
   },
   entry: {
     delay: 0.4,
-    state: { x: typeof window !== "undefined" ?window.innerWidth : 750 },
+    state: { x: typeof window !== "undefined" ? window.innerWidth : 750 },
   },
 }
 
@@ -44,7 +43,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
               const canonical = `https://henryb.uk${location.pathname}`
 
               return (
-                <Helmet>
+                <Helmet htmlAttributes={{ lang: "en" }}>
                   <title>{title}</title>
                   {description && (
                     <meta name="description" content={description} />
@@ -111,7 +110,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
                 >
                   GET IN TOUCH
                 </TransitionLink>
-                <button onClick={handleShowDrawer}>
+                <button onClick={handleShowDrawer} aria-label="Open Menu">
                   <Menu
                     size={32}
                     className="visible w-auto h-auto my-auto sm:invisible sm:w-0 sm:h-0"
