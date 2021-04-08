@@ -31,7 +31,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
 
   return (
     <TransitionState>
-      {({ transitionStatus, entry, exit , mount}) => (
+      {({ transitionStatus, entry, exit, mount }) => (
         <>
           <Location>
             {({ location }) => {
@@ -119,7 +119,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
               <div className="flex-grow overflow-hidden">
                 <motion.main
                   className={`w-full h-full overflow-${
-                   mount ? "auto" : "hidden"
+                    mount ? "auto" : "hidden"
                   }`}
                   onClick={hideDrawer}
                   initial={entry.state}
@@ -136,33 +136,39 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
                 >
                   {children}
                 </motion.main>
-                {showDrawer && (
-                  <aside className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto text-lg bg-white divide-y dark:bg-gray-700 bg-opacity-95">
-                    <h1 className="py-1 text-2xl">Henry Bersey</h1>
-                    <TransitionLink
-                      to="/music"
-                      className="py-1"
-                      {...pageTransitionLinkProps}
-                    >
-                      Musician
-                    </TransitionLink>
-                    <TransitionLink
-                      to="/dev"
-                      className="py-1"
-                      {...pageTransitionLinkProps}
-                    >
-                      Programmer
-                    </TransitionLink>
-                    <div className="flex-grow" />
-                    <TransitionLink
-                      to="/contact"
-                      className="py-1"
-                      {...pageTransitionLinkProps}
-                    >
-                      Get In Touch
-                    </TransitionLink>
-                  </aside>
-                )}
+                <motion.aside
+                  className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto text-lg bg-white divide-y dark:bg-gray-700 bg-opacity-95"
+                  variants={{
+                    hidden: { x: window.innerWidth * (2 / 3) },
+                    shown: { x: 0 },
+                  }}
+                  initial="hidden"
+                  animate={showDrawer && mount ? "shown" : "hidden"}
+                >
+                  <h1 className="py-1 text-2xl">Henry Bersey</h1>
+                  <TransitionLink
+                    to="/music"
+                    className="py-1"
+                    {...pageTransitionLinkProps}
+                  >
+                    Musician
+                  </TransitionLink>
+                  <TransitionLink
+                    to="/dev"
+                    className="py-1"
+                    {...pageTransitionLinkProps}
+                  >
+                    Programmer
+                  </TransitionLink>
+                  <div className="flex-grow" />
+                  <TransitionLink
+                    to="/contact"
+                    className="py-1"
+                    {...pageTransitionLinkProps}
+                  >
+                    Get In Touch
+                  </TransitionLink>
+                </motion.aside>
               </div>
 
               <footer className="py-2 text-center border-t dark:border-white">
