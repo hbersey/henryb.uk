@@ -44,7 +44,7 @@ const Youtube: FC<Props> = props => {
           </div>
         </div>
       ) : (
-        <iframe src={src} className="absolute top-0 left-0 w-full h-full bg-black" />
+        <iframe src={src} className="absolute top-0 left-0 w-full h-full bg-black" title={`"${props.title}" on Youtube`}/>
       )}
     </div>
   )

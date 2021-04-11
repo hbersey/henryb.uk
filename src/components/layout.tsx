@@ -180,7 +180,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
                 </motion.aside>
               </div>
 
-              <footer className="py-2 text-center border-t dark:border-white">
+              <footer className="py-2 mt-2 text-center border-t dark:border-white">
                 <p>© Henry Bersey 2021</p>
               </footer>
             </div>

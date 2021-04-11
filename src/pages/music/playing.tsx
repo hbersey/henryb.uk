@@ -9,7 +9,7 @@ const renderItem = (item: any, top: boolean) => (
   <div className="flex flex-col">
     <div className="flex-grow">
       <h2 className={top ? "text-3xl" : "text-xl"}>{item.title}</h2>
-      <h3 className="text-gray-600">{item.subtitle}</h3>
+      <h3 className="text-gray-600 dark:text-gray-300">{item.subtitle}</h3>
     </div>
     {item.children ? (
       <div className="grid grid-cols-none xl:grid-cols-3 md:grid-cols-2 gap-x-3 gap-y-2">
