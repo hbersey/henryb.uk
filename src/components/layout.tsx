@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from "react"
-import { Link } from "gatsby"
 import { Menu } from "heroicons-react"
 import { Helmet } from "react-helmet"
 import { Location } from "@reach/router"
@@ -22,7 +21,7 @@ export const pageTransitionLinkProps = {
   },
   entry: {
     delay: 0.4,
-    state: { x: typeof window !== "undefined" ? -window.innerWidth : -750 },
+    state: { x: typeof window !== "undefined" ? window.innerWidth : 750 },
   },
 }
 
@@ -44,7 +43,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
               const canonical = `https://henryb.uk${location.pathname}`
 
               return (
-                <Helmet>
+                <Helmet htmlAttributes={{ lang: "en" }}>
                   <title>{title}</title>
                   {description && (
                     <meta name="description" content={description} />
@@ -111,7 +110,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
                 >
                   GET IN TOUCH
                 </TransitionLink>
-                <button onClick={handleShowDrawer}>
+                <button onClick={handleShowDrawer} aria-label="Open Menu">
                   <Menu
                     size={32}
                     className="visible w-auto h-auto my-auto sm:invisible sm:w-0 sm:h-0"
@@ -139,16 +138,18 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
                 >
                   {children}
                 </motion.main>
+
                 <motion.aside
                   className="fixed top-0 right-0 flex flex-col w-2/3 h-full px-1 overflow-auto text-lg bg-white divide-y dark:bg-gray-700 bg-opacity-95"
                   variants={{
                     hidden: {
+                      opacity: 0,
                       x:
                         typeof window !== "undefined"
                           ? window.innerWidth * (2 / 3)
                           : 500,
                     },
-                    shown: { x: 0 },
+                    shown: { x: 0, opacity: 1 },
                   }}
                   initial="hidden"
                   animate={showDrawer && mount ? "shown" : "hidden"}
@@ -179,7 +180,7 @@ const Layout: FC<Props> = ({ children, pageName, description }) => {
                 </motion.aside>
               </div>
 
-              <footer className="py-2 text-center border-t dark:border-white">
+              <footer className="py-2 mt-2 text-center border-t dark:border-white">
                 <p>© Henry Bersey 2021</p>
               </footer>
             </div>

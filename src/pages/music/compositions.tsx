@@ -37,6 +37,7 @@ const CompositionsPage: FC<PageProps> = () => {
                     <SoundCloud
                       url={soundcloud}
                       colour={tailwind.theme.backgroundColor.red["500"]}
+                      title={`"${title}" on SoundCloud`}
                     />
                   )}
                 </div>
@@ -51,31 +52,37 @@ const CompositionsPage: FC<PageProps> = () => {
           <h3 className="mb-2 text-4xl">Arrangements</h3>
 
           <div className="grid md:grid-cols-2 gap-x-4 gap-y-2">
-            {arrangements.map(({ title, // year,
-              original, description, instrumentation }) => (
-              // soundcloud,
-              <div className="flex flex-col pt-2">
-                <h2 className="text-2xl">
-                  {/* {title} ({year ?? "TBF"}) */}
-                  {title} (TBF)
-                </h2>
-                <h4 className="text-xl italic">{original}</h4>
-                <p>{description}</p>
-                <p className="font-semibold">Instrumentation:</p>
-                <ul className="list-disc list-inside">
-                  {instrumentation.map(el => (
-                    <li>{el}</li>
-                  ))}
-                </ul>
-                <div className="flex-grow" />
-                {/* {soundcloud && (
+            {arrangements.map(
+              ({
+                title, // year,
+                original,
+                description,
+                instrumentation,
+              }) => (
+                // soundcloud,
+                <div className="flex flex-col pt-2">
+                  <h2 className="text-2xl">
+                    {/* {title} ({year ?? "TBF"}) */}
+                    {title} (TBF)
+                  </h2>
+                  <h3 className="text-xl italic">{original}</h3>
+                  <p>{description}</p>
+                  <p className="font-semibold">Instrumentation:</p>
+                  <ul className="list-disc list-inside">
+                    {instrumentation.map(el => (
+                      <li>{el}</li>
+                    ))}
+                  </ul>
+                  <div className="flex-grow" />
+                  {/* {soundcloud && (
                     <SoundCloud
                       url={soundcloud}
                       colour={tailwind.theme.backgroundColor.red["500"]}
                     />
                   )} */}
-              </div>
-            ))}
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

@@ -3,9 +3,10 @@ import React, { FC } from "react"
 type Props = {
   url: string
   colour?: string
+  title?: string
 }
 
-const SoundCloud: FC<Props> = ({ url, colour = "#ff5500" }) => {
+const SoundCloud: FC<Props> = ({ url, colour = "#ff5500", title }) => {
   return (
     <iframe
       width="100%"
@@ -16,6 +17,7 @@ const SoundCloud: FC<Props> = ({ url, colour = "#ff5500" }) => {
       src={`https://w.soundcloud.com/player/?url=${url}&color=${colour.substr(
         colour.length - 6
       )}`}
+      title={title}
       loading={"lazy"}
     />
   )
