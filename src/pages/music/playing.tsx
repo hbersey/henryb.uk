@@ -4,7 +4,6 @@ import Layout from "../../components/layout"
 import Youtube from "../../components/youtube"
 import Spotify from "../../components/spotify"
 import { playing } from "../../content/playing.json"
-import { number } from "prop-types"
 
 const renderItem = (item: any, top: boolean) => (
   <div className="flex flex-col">
@@ -18,7 +17,9 @@ const renderItem = (item: any, top: boolean) => (
       </div>
     ) : (
       <div>
-        {item.youtube && <Youtube {...item.youtube} />}
+        {item.youtube && (
+          <Youtube {...item.youtube} title={item.subtitle ?? item.title} />
+        )}
         {item.spotify && <Spotify spotifyUri={item.spotify} />}
       </div>
     )}
